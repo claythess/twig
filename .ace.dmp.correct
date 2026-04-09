@@ -1,0 +1,164 @@
+header magic: a1b2c3d4
+header version: 2 4
+header linktype: 1
+
+ 822071049.476386000	42	1514	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49547
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	yes
+		IP CSum:	50583
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	8300
+		CSum:	8619
+ 822071049.477856000	42	1514	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49547
+		Frag Offset:	1480
+		Frag DF:	no
+		Frag MF:	yes
+		IP CSum:	50398
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1792
+		Dport:	16400
+		DGlen:	256
+		CSum:	292
+ 822071049.479246000	42	1514	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49547
+		Frag Offset:	2960
+		Frag DF:	no
+		Frag MF:	yes
+		IP CSum:	50213
+		Type:	0x11	(UDP)
+	UDP:	Sport:	57599
+		Dport:	48423
+		DGlen:	7168
+		CSum:	49071
+ 822071049.480329000	42	1514	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49547
+		Frag Offset:	4440
+		Frag DF:	no
+		Frag MF:	yes
+		IP CSum:	50028
+		Type:	0x11	(UDP)
+	UDP:	Sport:	0
+		Dport:	10371
+		DGlen:	0
+		CSum:	0
+ 822071049.481635000	42	1514	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49547
+		Frag Offset:	5920
+		Frag DF:	no
+		Frag MF:	yes
+		IP CSum:	49843
+		Type:	0x11	(UDP)
+	UDP:	Sport:	12288
+		Dport:	43151
+		DGlen:	0
+		CSum:	0
+ 822071049.482368000	42	934	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49547
+		Frag Offset:	7400
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	58430
+		Type:	0x11	(UDP)
+	UDP:	Sport:	5120
+		Dport:	44975
+		DGlen:	63673
+		CSum:	5900
+ 822071049.514951000	42	170	08:00:2b:1d:e0:cc	08:00:2b:1b:be:dd	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.2.22	
+		Dest:	132.235.3.1	(bigbird.cs.ohio.edu)
+		TTL:	255
+		Frag Ident:	16736
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	27395
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	136
+		CSum:	39679
+ 822071049.518135000	42	1514	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49803
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	yes
+		IP CSum:	50327
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	4204
+		CSum:	7097
+ 822071049.519759000	42	1514	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49803
+		Frag Offset:	1480
+		Frag DF:	no
+		Frag MF:	yes
+		IP CSum:	50142
+		Type:	0x11	(UDP)
+	UDP:	Sport:	14336
+		Dport:	42639
+		DGlen:	15360
+		CSum:	42895
+ 822071049.520877000	42	1278	08:00:2b:1b:be:dd	08:00:2b:1d:e0:cc	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.1	(bigbird.cs.ohio.edu)
+		Dest:	132.235.2.22	
+		TTL:	255
+		Frag Ident:	49803
+		Frag Offset:	2960
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	58385
+		Type:	0x11	(UDP)
+	UDP:	Sport:	32888
+		Dport:	3328
+		DGlen:	9080
+		CSum:	60673

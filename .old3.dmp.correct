@@ -1,0 +1,670 @@
+header magic: a1b2c3d4
+header version: 2 4
+header linktype: 1
+
+ 790283458.975706000	158	158	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39124
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54117
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	124
+		CSum:	1645
+ 790283458.977824000	138	138	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29089
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64172
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	48281
+ 790283458.979916000	138	138	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29089
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64428
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	48281
+ 790283458.981475000	158	158	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39126
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54115
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	124
+		CSum:	44204
+ 790283458.982466000	138	138	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29090
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64171
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	22393
+ 790283458.984020000	138	138	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29090
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64427
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	22393
+ 790283458.986022000	166	166	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39127
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54106
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	132
+		CSum:	52675
+ 790283458.987343000	170	170	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29091
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64138
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	35148
+ 790283458.989840000	170	170	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29091
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64394
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	35148
+ 790283458.991605000	158	158	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39128
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54113
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	124
+		CSum:	38894
+ 790283458.992411000	138	138	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29092
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64169
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	41479
+ 790283458.994189000	138	138	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29092
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64425
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	41479
+ 790283458.995776000	166	166	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39129
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54104
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	132
+		CSum:	47365
+ 790283458.997031000	170	170	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29093
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64136
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	54234
+ 790283458.999133000	170	170	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29093
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64392
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	54234
+ 790283459.000745000	158	158	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39130
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54111
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	124
+		CSum:	27222
+ 790283459.001579000	138	138	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29094
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64167
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	12116
+ 790283459.003102000	138	138	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29094
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64423
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	12116
+ 790283459.004877000	166	166	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39131
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54102
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	132
+		CSum:	35693
+ 790283459.006026000	170	170	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29095
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64134
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	24871
+ 790283459.008074000	170	170	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29095
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64390
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	24871
+ 790283459.009871000	158	158	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39132
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54109
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	124
+		CSum:	15950
+ 790283459.014507000	138	138	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29096
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64165
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	3256
+ 790283459.016049000	138	138	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29096
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64421
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	3256
+ 790283459.017571000	158	158	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39133
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54108
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	124
+		CSum:	13946
+ 790283459.018332000	138	138	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29097
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64164
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	46422
+ 790283459.020419000	138	138	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29097
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64420
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	46422
+ 790283459.022784000	166	166	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39134
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54099
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	132
+		CSum:	22417
+ 790283459.023845000	170	170	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29099
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64130
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	59177
+ 790283459.025570000	170	170	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29099
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64386
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	59177
+ 790283459.027295000	158	158	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39135
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54106
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	124
+		CSum:	49213
+ 790283459.028344000	138	138	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29100
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64161
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	39986
+ 790283459.029830000	138	138	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29100
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64417
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	104
+		CSum:	39986
+ 790283459.031355000	166	166	08:00:20:1b:42:d0	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.1.184	
+		TTL:	255
+		Frag Ident:	39136
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	54097
+		Type:	0x11	(UDP)
+	UDP:	Sport:	1023
+		Dport:	2049
+		DGlen:	132
+		CSum:	57684
+ 790283459.032684000	170	170	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	29101
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64128
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	52741
+ 790283459.034323000	170	170	08:00:20:22:46:6a	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	132.235.3.148	
+		TTL:	254
+		Frag Ident:	29101
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	64384
+		Type:	0x11	(UDP)
+	UDP:	Sport:	2049
+		Dport:	1023
+		DGlen:	136
+		CSum:	52741
+ 790283459.190956000	60	60	ff:ff:ff:ff:ff:ff	08:00:20:22:46:6a	0x0806
+	ARP:	HWtype:	1
+		hlen:	6
+		plen:	4
+		OP:	1 (ARP request)
+		Hardware:	08:00:20:22:46:6a
+			==>	ff:ff:ff:ff:ff:ff
+		Protocol:	132.235.3.148	
+			==>	132.235.3.133	(junk.cs.ohio.edu)
+ 790283459.191371000	60	60	08:00:20:22:46:6a	08:00:20:10:4c:ea	0x0806
+	ARP:	HWtype:	1
+		hlen:	6
+		plen:	4
+		OP:	2 (ARP reply)
+		Hardware:	08:00:20:10:4c:ea
+			==>	08:00:20:22:46:6a
+		Protocol:	132.235.3.133	(junk.cs.ohio.edu)
+			==>	132.235.3.148	
+ 790283459.193401000	98	98	08:00:20:10:4c:ea	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.3.133	(junk.cs.ohio.edu)
+		TTL:	255
+		Frag Ident:	48865
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	43991
+		Type:	0x1	
+ 790283459.194148000	98	98	08:00:20:22:46:6a	08:00:20:10:4c:ea	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.133	(junk.cs.ohio.edu)
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	53515
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	39341
+		Type:	0x1	
+ 790283460.185751000	98	98	08:00:20:10:4c:ea	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.3.133	(junk.cs.ohio.edu)
+		TTL:	255
+		Frag Ident:	48866
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	43990
+		Type:	0x1	
+ 790283460.186539000	98	98	08:00:20:22:46:6a	08:00:20:10:4c:ea	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.133	(junk.cs.ohio.edu)
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	53516
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	39340
+		Type:	0x1	
+ 790283461.185525000	98	98	08:00:20:10:4c:ea	08:00:20:22:46:6a	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.148	
+		Dest:	132.235.3.133	(junk.cs.ohio.edu)
+		TTL:	255
+		Frag Ident:	48867
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	43989
+		Type:	0x1	
+ 790283461.186290000	98	98	08:00:20:22:46:6a	08:00:20:10:4c:ea	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.133	(junk.cs.ohio.edu)
+		Dest:	132.235.3.148	
+		TTL:	255
+		Frag Ident:	53517
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	39339
+		Type:	0x1	

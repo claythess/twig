@@ -1,0 +1,124 @@
+header magic: a1b2c3d4
+header version: 2 4
+header linktype: 1
+
+1705888881.218053000	98	98	b4:fb:e4:d1:3c:93	14:98:77:38:a6:5d	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.17	
+		Dest:	8.8.8.8	(dns.google)
+		TTL:	64
+		Frag Ident:	29414
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	0
+		Type:	0x1	
+1705888881.256010000	98	98	14:98:77:38:a6:5d	b4:fb:e4:d1:3c:93	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	8.8.8.8	(dns.google)
+		Dest:	132.235.3.17	
+		TTL:	114
+		Frag Ident:	0
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	45213
+		Type:	0x1	
+1705888882.220588000	98	98	b4:fb:e4:d1:3c:93	14:98:77:38:a6:5d	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.17	
+		Dest:	8.8.8.8	(dns.google)
+		TTL:	64
+		Frag Ident:	41056
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	0
+		Type:	0x1	
+1705888882.254252000	98	98	14:98:77:38:a6:5d	b4:fb:e4:d1:3c:93	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	8.8.8.8	(dns.google)
+		Dest:	132.235.3.17	
+		TTL:	114
+		Frag Ident:	0
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	45213
+		Type:	0x1	
+1705888883.224899000	98	98	b4:fb:e4:d1:3c:93	14:98:77:38:a6:5d	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.17	
+		Dest:	8.8.8.8	(dns.google)
+		TTL:	64
+		Frag Ident:	26991
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	0
+		Type:	0x1	
+1705888883.254374000	98	98	14:98:77:38:a6:5d	b4:fb:e4:d1:3c:93	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	8.8.8.8	(dns.google)
+		Dest:	132.235.3.17	
+		TTL:	114
+		Frag Ident:	0
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	45213
+		Type:	0x1	
+1705888884.228778000	98	98	b4:fb:e4:d1:3c:93	14:98:77:38:a6:5d	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.17	
+		Dest:	8.8.8.8	(dns.google)
+		TTL:	64
+		Frag Ident:	43503
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	0
+		Type:	0x1	
+1705888884.259129000	98	98	14:98:77:38:a6:5d	b4:fb:e4:d1:3c:93	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	8.8.8.8	(dns.google)
+		Dest:	132.235.3.17	
+		TTL:	114
+		Frag Ident:	0
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	45213
+		Type:	0x1	
+1705888885.233898000	98	98	b4:fb:e4:d1:3c:93	14:98:77:38:a6:5d	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.3.17	
+		Dest:	8.8.8.8	(dns.google)
+		TTL:	64
+		Frag Ident:	10767
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	0
+		Type:	0x1	
+1705888885.262411000	98	98	14:98:77:38:a6:5d	b4:fb:e4:d1:3c:93	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	8.8.8.8	(dns.google)
+		Dest:	132.235.3.17	
+		TTL:	114
+		Frag Ident:	0
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	45213
+		Type:	0x1	

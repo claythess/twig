@@ -1,0 +1,365 @@
+header magic: a1b2c3d4
+header version: 2 4
+header linktype: 1
+
+ 783714639.152857000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48777
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44233
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	-S----
+		Seq:	2371930624
+		ACK:	0
+		Win:	8760
+		CSum:	34670
+ 783714640.244075000	60	60	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15085
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	25195
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	-S--A-
+		Seq:	2348928001
+		ACK:	2371930625
+		Win:	4096
+		CSum:	22862
+ 783714640.267936000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48778
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44234
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	---PA-
+		Seq:	2371930625
+		ACK:	2348928002
+		Win:	9112
+		CSum:	14499
+ 783714640.782917000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48779
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44233
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	---PA-
+		Seq:	2371930625
+		ACK:	2348928002
+		Win:	9112
+		CSum:	14499
+ 783714642.353199000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48780
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44232
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	---PA-
+		Seq:	2371930625
+		ACK:	2348928002
+		Win:	9112
+		CSum:	14499
+ 783714642.436808000	60	60	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15236
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	25044
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348928002
+		ACK:	2371930627
+		Win:	4096
+		CSum:	22861
+ 783714646.985557000	96	566	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15610
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24158
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348928002
+		ACK:	2371930627
+		Win:	4096
+		CSum:	47697
+ 783714646.988473000	96	566	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15611
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24157
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348928514
+		ACK:	2371930627
+		Win:	4096
+		CSum:	29415
+ 783714646.988766000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48781
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44233
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	----A-
+		Seq:	2371930627
+		ACK:	2348929026
+		Win:	9112
+		CSum:	16821
+ 783714647.094294000	96	566	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15629
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24139
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348929538
+		ACK:	2371930627
+		Win:	4096
+		CSum:	35418
+ 783714647.097199000	96	566	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15630
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24138
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348929026
+		ACK:	2371930627
+		Win:	4096
+		CSum:	50830
+ 783714647.097627000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48782
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44232
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	----A-
+		Seq:	2371930627
+		ACK:	2348930050
+		Win:	9112
+		CSum:	15797
+ 783714647.100187000	96	566	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15631
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24137
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348930050
+		ACK:	2371930627
+		Win:	4096
+		CSum:	8295
+ 783714647.144207000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48783
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44231
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	----A-
+		Seq:	2371930627
+		ACK:	2348930562
+		Win:	9112
+		CSum:	15285
+ 783714647.213284000	96	566	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15653
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24115
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348930562
+		ACK:	2371930627
+		Win:	4096
+		CSum:	23703
+ 783714647.213535000	96	204	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15654
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24476
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	F--PA-
+		Seq:	2348931074
+		ACK:	2371930627
+		Win:	4096
+		CSum:	24977
+ 783714647.213984000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48784
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44230
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	----A-
+		Seq:	2371930627
+		ACK:	2348931225
+		Win:	9112
+		CSum:	14622
+ 783714647.224234000	60	60	aa:00:04:00:fd:b5	08:00:20:1b:42:d0	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	132.235.1.184	
+		Dest:	128.210.9.3	
+		TTL:	255
+		Frag Ident:	48785
+		Frag Offset:	0
+		Frag DF:	yes
+		Frag MF:	no
+		IP CSum:	44229
+		Type:	0x6	(TCP)
+	TCP:	Sport:	34391
+		Dport:	79
+		Flags:	F---A-
+		Seq:	2371930627
+		ACK:	2348931225
+		Win:	9112
+		CSum:	14621
+ 783714647.314570000	60	60	08:00:20:1b:42:d0	aa:00:04:00:fd:b5	0x0800
+	IP:	Vers:	4
+		Hlen:	20 bytes
+		Src:	128.210.9.3	
+		Dest:	132.235.1.184	
+		TTL:	13
+		Frag Ident:	15665
+		Frag Offset:	0
+		Frag DF:	no
+		Frag MF:	no
+		IP CSum:	24615
+		Type:	0x6	(TCP)
+	TCP:	Sport:	79
+		Dport:	34391
+		Flags:	----A-
+		Seq:	2348931225
+		ACK:	2371930628
+		Win:	4096
+		CSum:	19637
