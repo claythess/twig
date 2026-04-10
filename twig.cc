@@ -187,18 +187,27 @@ int main(int argc, char *argv[])
     printf("header version: %d %d\n", pfh.version_major, pfh.version_minor);
     printf("header linktype: %d\n\n", pfh.linktype);
     /* now read each packet in the file */
+    std::streamsize total_read;
+    //std::streamsize last_read;
     while (1) {
         char frame_buffer[10000];
         char datagram_buffer[10000];
 
         /* read the pcap_packet_header, then print as requested */
         struct pcap_pkthdr pkh;
-        if (fh.read((char *)&pkh, sizeof(pkh)));
+        total_read = 0;
+        while (total_read < sizeof(pkh)){
+            fh.clear();
+            fh.read(((char *)&pkh) + total_read, sizeof(pkh) - total_read);
+            total_read += fh.gcount(); 
+        }
+        /*
         else if (fh.eof()){
             if (fh.gcount() == 0) break;
             printf("truncated packet header: only %ld bytes\n", fh.gcount());
             exit(1);
-        }
+        }*/ 
+
         len = fh.gcount();
 
         if (debug) printf("Packet chars read: %ld\n", len);
@@ -231,6 +240,7 @@ int main(int argc, char *argv[])
         //if () // doesn't work yet
         int total_bytes = 0;
         if (pfh.linktype == 1) {
+            /*
             if (fh.read(frame_buffer, sizeof(struct eth_hdr))){
                 total_bytes += fh.gcount();
             }
@@ -241,6 +251,13 @@ int main(int argc, char *argv[])
             else {
                 printf("Only Read %ld\n", fh.gcount());
                 exit(1);
+            }
+                */
+            total_read = 0;
+            while (total_read < sizeof(struct eth_hdr)){
+                fh.clear();
+                fh.read((frame_buffer) + total_read, sizeof(struct eth_hdr) - total_read);
+                total_read += fh.gcount(); 
             }
 
             struct eth_hdr *eth_hdr_ptr = (struct eth_hdr*) frame_buffer;
@@ -254,7 +271,7 @@ int main(int argc, char *argv[])
 
             
             if (debug) printf("Reading Rest of packet\n");
-
+            /*
             if (fh.read(datagram_buffer, sizeof(char) * rest_of_packet_size));
             else if (fh.eof()){
                 printf("truncated packet: only %ld bytes\n", total_bytes + fh.gcount());
@@ -263,6 +280,14 @@ int main(int argc, char *argv[])
             else{
                 printf("error\n");
                 exit(1);
+            }
+            */
+            total_read = 0;
+            while (total_read < sizeof(char) * rest_of_packet_size){
+                fh.clear();
+                fh.read((datagram_buffer) + total_read, (sizeof(char) * rest_of_packet_size) - total_read);
+                total_read += fh.gcount(); 
+
             }
             
 

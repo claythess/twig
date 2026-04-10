@@ -236,7 +236,7 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr){
                 //fh.write(reinterpret_cast<char*>(&response), sizeof(icmp_hdr));
                 
                 int fd = open(filename, O_WRONLY | O_APPEND);
-                writev(fd, iov, 1);
+                writev(fd, iov, 3);
                 close(fd);
             }
         }
