@@ -29,7 +29,7 @@ void print_dns(uint8_t address[]);
 void print_udp(struct udp_hdr* udp);
 uint32_t fix_long(uint8_t old[]);
 void print_tcp(struct tcp_hdr *tcp);
-void print_ipv4(struct ip_hdr *ip, uint32_t local_addr);
+void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_eth);
 void print_arp(struct arp_hdr *arp);
 
 void swap_word(uint32_t &x);

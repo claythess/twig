@@ -296,7 +296,7 @@ int main(int argc, char *argv[])
             print_ethernet((struct eth_hdr *) frame_buffer);
 
             if ((eth_hdr_ptr -> eth_type[0] == 0x08) && (eth_hdr_ptr -> eth_type[1] == 0x00)){
-                print_ipv4((struct ip_hdr*) datagram_buffer, ip_addr);
+                print_ipv4((struct ip_hdr*) datagram_buffer, ip_addr, (struct eth_hdr *) frame_buffer);
             }
             else if ((eth_hdr_ptr -> eth_type[0] == 0x08) && (eth_hdr_ptr -> eth_type[1] == 0x06)){
                 print_arp((struct arp_hdr*) datagram_buffer);

@@ -109,7 +109,7 @@ void handle_icmp(struct icmp_hdr *icmp){
 }
 
 
-void print_ipv4(struct ip_hdr *ip, uint32_t local_addr){
+void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_eth){
     printf("\tIP:\tVers:\t4\n");
     printf("\t\tHlen:\t%d bytes\n", (ip -> vers_ihl & 0xF)*4);
     printf("\t\tSrc:\t");
@@ -200,6 +200,11 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr){
                 //pkh.ts_usecs = ntohl(pkh.ts_usecs);
                 }
 
+                struct eth_hdr eth;
+                memcpy(eth.dst_mac, parent_eth->src_mac,sizeof(uint8_t) * 6);
+                memcpy(eth.src_mac, parent_eth->dst_mac,sizeof(uint8_t) * 6);
+                memcpy(eth.eth_type, parent_eth->eth_type,sizeof(uint8_t) * 2);
+
                 struct ip_hdr iph;
                 iph.protocol = 0;
                 memcpy(&iph.dst, ip -> src, sizeof(uint8_t) * 4);
@@ -221,22 +226,25 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr){
                 response.chksum = 0;
 
 
-                struct iovec iov[3];
+                struct iovec iov[4];
                 iov[0].iov_base = &pch;
                 iov[0].iov_len = sizeof(struct pcap_pkthdr);
 
-                iov[1].iov_base = &iph;
-                iov[1].iov_len = sizeof(struct ip_hdr);
+                iov[1].iov_base = &eth;
+                iov[1].iov_len = sizeof(struct eth_hdr);
 
-                iov[2].iov_base = &response;
-                iov[2].iov_len = sizeof(icmp_hdr);
+                iov[2].iov_base = &iph;
+                iov[2].iov_len = sizeof(struct ip_hdr);
+
+                iov[3].iov_base = &response;
+                iov[3].iov_len = sizeof(icmp_hdr);
                 
                 //fh.write(reinterpret_cast<char*>(&pch), sizeof(pcap_pkthdr));
                 //fh.write(reinterpret_cast<char*>(&iph), sizeof(ip_hdr));
                 //fh.write(reinterpret_cast<char*>(&response), sizeof(icmp_hdr));
                 
                 int fd = open(filename, O_WRONLY | O_APPEND);
-                writev(fd, iov, 3);
+                writev(fd, iov, 4);
                 close(fd);
             }
         }
