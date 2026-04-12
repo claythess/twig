@@ -183,8 +183,8 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_e
                 printf("respond to ping\n");
 
                 struct pcap_pkthdr pch;
-                pch.caplen = sizeof(sizeof(struct ip_hdr) + sizeof(struct icmp_hdr));
-                pch.len = sizeof(sizeof(struct ip_hdr) + sizeof(struct icmp_hdr));
+                pch.caplen = sizeof(struct ip_hdr) + sizeof(struct icmp_hdr);
+                pch.len = sizeof(struct ip_hdr) + sizeof(struct icmp_hdr);
                 struct timeval tv;
                 if (gettimeofday(&tv, NULL) == 0) {
                     pch.ts_secs = tv.tv_sec;
@@ -206,10 +206,10 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_e
                 memcpy(eth.eth_type, parent_eth->eth_type,sizeof(uint8_t) * 2);
 
                 struct ip_hdr iph;
-                iph.protocol = 0;
+                iph.protocol = 1;
                 memcpy(&iph.dst, ip -> src, sizeof(uint8_t) * 4);
                 memcpy(&iph.src, ip -> dst, sizeof(uint8_t) * 4);
-                iph.total_length = sizeof(sizeof(struct ip_hdr) + sizeof(struct icmp_hdr));
+                iph.total_length = sizeof(struct ip_hdr) + sizeof(struct icmp_hdr);
                 iph.ttl = 32;
                 // iph.flags_fragment
                 iph.vers_ihl = ip->vers_ihl; // Should be the same
@@ -224,6 +224,15 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_e
                 response.code = 0;
                 response.rest = 0;
                 response.chksum = 0;
+                
+                // Calculate ICMP checksum
+                uint16_t chksum = 0;
+                uint8_t* icmp_ptr = (uint8_t*)&response;
+                for (int i = 0; i < sizeof(struct icmp_hdr); i += 2) {
+                    chksum += (icmp_ptr[i] << 8) | icmp_ptr[i+1];
+                }
+                chksum = (chksum >> 16) + (chksum & 0xFFFF);
+                response.chksum = htons(~chksum);
 
 
                 struct iovec iov[4];
