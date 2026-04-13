@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
     //char *filename;
     
     /* start with something like this (or use this if you like it) */
-    char* ip_interface;
+    char* ip_interface = NULL;
 
     bool show_help = false;
 
@@ -187,7 +187,7 @@ int main(int argc, char *argv[])
     printf("header version: %d %d\n", pfh.version_major, pfh.version_minor);
     printf("header linktype: %d\n\n", pfh.linktype);
     /* now read each packet in the file */
-    std::streamsize total_read;
+    long unsigned int total_read;
     //std::streamsize last_read;
     while (1) {
         char frame_buffer[10000];
@@ -238,7 +238,7 @@ int main(int argc, char *argv[])
         /* then read the packet data that goes with it into a buffer (variable size) */
 
         //if () // doesn't work yet
-        int total_bytes = 0;
+        //int total_bytes = 0;
         if (pfh.linktype == 1) {
             /*
             if (fh.read(frame_buffer, sizeof(struct eth_hdr))){

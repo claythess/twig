@@ -404,15 +404,23 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_e
                 uint16_t icmp_sum = 0;
                 uint8_t* icmp_bytes = (uint8_t*)&response;
                 for(int i = 0; i < 8; i += 2) {
-                    icmp_sum += (icmp_bytes[i] << 8) | icmp_bytes[i+1];
+                    uint16_t word = (icmp_bytes[i] << 8) | icmp_bytes[i+1];
+                    uint16_t temp = icmp_sum;
+                    icmp_sum += word;
+                    if (icmp_sum < temp) icmp_sum += 1;
                 }
                 uint8_t* data_bytes = (uint8_t*)icmp_data;
                 for(int i = 0; i < data_len; i += 2) {
                     uint16_t word = (data_bytes[i] << 8) | data_bytes[i+1];
+                    uint16_t temp = icmp_sum;
                     icmp_sum += word;
+                    if (icmp_sum < temp) icmp_sum += 1;
                 }
                 if(data_len % 2) {
-                    icmp_sum += data_bytes[data_len - 1] << 8;
+                    uint16_t word = data_bytes[data_len - 1] << 8;
+                    uint16_t temp = icmp_sum;
+                    icmp_sum += word;
+                    if (icmp_sum < temp) icmp_sum += 1;
                 }
                 icmp_sum = (icmp_sum & 0xFFFF) + (icmp_sum >> 16);
                 response.chksum = htons(~icmp_sum);
