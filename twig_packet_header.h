@@ -83,6 +83,6 @@ struct udp_hdr {
 struct icmp_hdr {
         uint8_t type;
         uint8_t code;
-        uint8_t chksum;
+        uint16_t chksum;
         uint32_t rest;
 };

@@ -170,6 +170,167 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_e
         // UDP
         printf("(UDP)\n");
          handle_udp((struct udp_hdr*) rest_of_packet);
+
+        struct udp_hdr* udp = (struct udp_hdr*) rest_of_packet;
+        uint16_t dst_port = (udp -> dst_port[0] << 8) | udp -> dst_port[1];
+        uint16_t udp_len = (udp -> length[0] << 8) | udp -> length[1];
+        uint16_t data_len = udp_len - 8;
+        char* udp_data = (char*)rest_of_packet + 8;
+
+        if (dst_port == 37) {
+            printf("Respond to time request\n");
+
+            struct pcap_pkthdr pch;
+            // IP + UDP + Data
+            uint16_t response_len = sizeof(struct eth_hdr) + 20 + 8 + 4;
+            pch.caplen = response_len;
+            pch.len = response_len;
+            struct timeval tv;
+            gettimeofday(&tv, NULL);
+            pch.ts_secs = tv.tv_sec;
+            pch.ts_usecs = tv.tv_usec;
+
+            if (inverse_magic) {
+                swap_word(pch.ts_secs);
+                swap_word(pch.ts_usecs);
+                swap_word(pch.len);
+                swap_word(pch.caplen);
+            }
+
+            struct eth_hdr eth;
+            memcpy(eth.dst_mac, parent_eth->src_mac, 6);
+            memcpy(eth.src_mac, parent_eth->dst_mac, 6);
+            memcpy(eth.eth_type, parent_eth->eth_type, 2);
+
+            struct ip_hdr iph;
+            iph.vers_ihl = 0x45;
+            iph.tos = 0;
+            iph.total_length = htons(20 + 8 + 4);
+            iph.identification = htons(rand() % 65536);
+            iph.flags_fragment[0] = 0;
+            iph.flags_fragment[1] = 0;
+            iph.ttl = 64;
+            iph.protocol = 17;
+            iph.chksum = 0;
+            memcpy(iph.src, ip->dst, 4);
+            memcpy(iph.dst, ip->src, 4);
+
+            // IP checksum
+            uint32_t sum = 0;
+            uint8_t* ipb = (uint8_t*)&iph;
+            for(int i = 0; i < 20; i += 2) {
+                sum += (ipb[i] << 8) | ipb[i + 1];
+            }
+            sum = (sum & 0xFFFF) + (sum >> 16);
+            iph.chksum = htons(~sum);
+
+            struct udp_hdr udph;
+            udph.src_port[0] = udp->dst_port[0];
+            udph.src_port[1] = udp->dst_port[1];
+            udph.dst_port[0] = udp->src_port[0];
+            udph.dst_port[1] = udp->src_port[1];
+            udph.length[0] = 0;
+            udph.length[1] = 12;
+            udph.chksum[0] = 0;
+            udph.chksum[1] = 0;
+
+            // Offset to 1970
+            uint32_t time_val = tv.tv_sec + 2208988800UL;
+            uint8_t time_data[4];
+
+            time_data[0] = (time_val >> 24) & 0xFF;
+            time_data[1] = (time_val >> 16) & 0xFF;
+            time_data[2] = (time_val >> 8) & 0xFF;
+            time_data[3] = time_val & 0xFF;
+
+            struct iovec iov[5];
+            iov[0].iov_base = &pch;
+            iov[0].iov_len = sizeof(struct pcap_pkthdr);
+            iov[1].iov_base = &eth;
+            iov[1].iov_len = sizeof(struct eth_hdr);
+            iov[2].iov_base = &iph;
+            iov[2].iov_len = sizeof(struct ip_hdr);
+            iov[3].iov_base = &udph;
+            iov[3].iov_len = sizeof(struct udp_hdr);
+            iov[4].iov_base = time_data;
+            iov[4].iov_len = 4;
+
+            int fd = open(filename, O_WRONLY | O_APPEND);
+            if (writev(fd, iov, 5) == -1) perror("writev");
+            close(fd);
+        }
+        else if (dst_port == 7) {
+            printf("Respond to echo request\n");
+
+            struct pcap_pkthdr pch;
+            uint16_t response_len = sizeof(struct eth_hdr) + 20 + udp_len;
+            pch.caplen = response_len;
+            pch.len = response_len;
+            struct timeval tv;
+            gettimeofday(&tv, NULL);
+            pch.ts_secs = tv.tv_sec;
+            pch.ts_usecs = tv.tv_usec;
+
+            if (inverse_magic) {
+                swap_word(pch.ts_secs);
+                swap_word(pch.ts_usecs);
+                swap_word(pch.len);
+                swap_word(pch.caplen);
+            }
+
+            struct eth_hdr eth;
+            memcpy(eth.dst_mac, parent_eth->src_mac, 6);
+            memcpy(eth.src_mac, parent_eth->dst_mac, 6);
+            memcpy(eth.eth_type, parent_eth->eth_type, 2);
+
+            struct ip_hdr iph;
+            iph.vers_ihl = 0x45;
+            iph.tos = 0;
+            iph.total_length = htons(20 + udp_len);
+            iph.identification = htons(rand() % 65536);
+            iph.flags_fragment[0] = 0;
+            iph.flags_fragment[1] = 0;
+            iph.ttl = 64;
+            iph.protocol = 17;
+            iph.chksum = 0;
+            memcpy(iph.src, ip->dst, 4);
+            memcpy(iph.dst, ip->src, 4);
+
+            // IP checksum
+            uint32_t sum = 0;
+            uint8_t* ipb = (uint8_t*)&iph;
+            for(int i = 0; i < 20; i += 2) {
+                sum += (ipb[i] << 8) | ipb[i + 1];
+            }
+            sum = (sum & 0xFFFF) + (sum >> 16);
+            iph.chksum = htons(~sum);
+
+            struct udp_hdr udph;
+            udph.src_port[0] = udp->dst_port[0];
+            udph.src_port[1] = udp->dst_port[1];
+            udph.dst_port[0] = udp->src_port[0];
+            udph.dst_port[1] = udp->src_port[1];
+            udph.length[0] = udp->length[0];
+            udph.length[1] = udp->length[1];
+            udph.chksum[0] = 0;
+            udph.chksum[1] = 0;
+
+            struct iovec iov[5];
+            iov[0].iov_base = &pch;
+            iov[0].iov_len = sizeof(struct pcap_pkthdr);
+            iov[1].iov_base = &eth;
+            iov[1].iov_len = sizeof(struct eth_hdr);
+            iov[2].iov_base = &iph;
+            iov[2].iov_len = sizeof(struct ip_hdr);
+            iov[3].iov_base = &udph;
+            iov[3].iov_len = sizeof(struct udp_hdr);
+            iov[4].iov_base = udp_data;
+            iov[4].iov_len = data_len;
+
+            int fd = open(filename, O_WRONLY | O_APPEND);
+            if (writev(fd, iov, 5) == -1) perror("writev");
+            close(fd);
+        }
     }
     else if (ip -> protocol == 1){
         printf("(ICMP)\n");
@@ -182,9 +343,16 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_e
             if (icmp -> type == 8 && icmp -> code == 0){
                 printf("respond to ping\n");
 
+                uint8_t ip_hlen = (ip -> vers_ihl & 0xF) * 4;
+                uint16_t ip_total = ntohs(ip -> total_length);
+                uint16_t icmp_len = ip_total - ip_hlen;
+                uint16_t data_len = icmp_len - 8;
+                char* icmp_data = (char*)rest_of_packet + 8;
+
                 struct pcap_pkthdr pch;
-                pch.caplen = sizeof(struct ip_hdr) + sizeof(struct icmp_hdr);
-                pch.len = sizeof(struct ip_hdr) + sizeof(struct icmp_hdr);
+                uint16_t response_ip_len = 20 + icmp_len;
+                pch.caplen = sizeof(struct eth_hdr) + response_ip_len;
+                pch.len = pch.caplen;
                 struct timeval tv;
                 if (gettimeofday(&tv, NULL) == 0) {
                     pch.ts_secs = tv.tv_sec;
@@ -196,64 +364,73 @@ void print_ipv4(struct ip_hdr *ip, uint32_t local_addr, struct eth_hdr *parent_e
                     swap_word(pch.ts_usecs);
                     swap_word(pch.len);
                     swap_word(pch.caplen);
-                //pkh.ts_secs = ntohl(pkh.ts_secs);
-                //pkh.ts_usecs = ntohl(pkh.ts_usecs);
                 }
 
                 struct eth_hdr eth;
-                memcpy(eth.dst_mac, parent_eth->src_mac,sizeof(uint8_t) * 6);
-                memcpy(eth.src_mac, parent_eth->dst_mac,sizeof(uint8_t) * 6);
-                memcpy(eth.eth_type, parent_eth->eth_type,sizeof(uint8_t) * 2);
+                memcpy(eth.dst_mac, parent_eth->src_mac, 6);
+                memcpy(eth.src_mac, parent_eth->dst_mac, 6);
+                memcpy(eth.eth_type, parent_eth->eth_type, 2);
 
                 struct ip_hdr iph;
-                iph.protocol = 1;
-                memcpy(&iph.dst, ip -> src, sizeof(uint8_t) * 4);
-                memcpy(&iph.src, ip -> dst, sizeof(uint8_t) * 4);
-                iph.total_length = sizeof(struct ip_hdr) + sizeof(struct icmp_hdr);
-                iph.ttl = 32;
-                // iph.flags_fragment
-                iph.vers_ihl = ip->vers_ihl; // Should be the same
-                iph.total_length = ip->total_length; // should be the same
-                iph.tos = ip->tos;
-                iph.flags_fragment[0] = 0b01000000;
+                iph.vers_ihl = 0x45;
+                iph.tos = 0;
+                iph.total_length = htons(response_ip_len);
+                iph.identification = htons(rand() % 65536);
+                iph.flags_fragment[0] = 0;
                 iph.flags_fragment[1] = 0;
-                iph.identification = rand();
+                iph.ttl = 64;
+                iph.protocol = 1;
+                iph.chksum = 0;
+                memcpy(iph.src, ip->dst, 4);
+                memcpy(iph.dst, ip->src, 4);
+
+                // Calculate IP checksum
+                uint32_t sum = 0;
+                uint8_t* ip_hdr_bytes = (uint8_t*)&iph;
+                for(int i = 0; i < 20; i += 2) {
+                    uint16_t word = (ip_hdr_bytes[i] << 8) | ip_hdr_bytes[i+1];
+                    sum += word;
+                }
+                sum = (sum & 0xFFFF) + (sum >> 16);
+                iph.chksum = htons(~sum);
 
                 struct icmp_hdr response;
                 response.type = 0;
                 response.code = 0;
-                response.rest = 0;
                 response.chksum = 0;
+                response.rest = icmp->rest;
                 
                 // Calculate ICMP checksum
-                uint16_t chksum = 0;
-                uint8_t* icmp_ptr = (uint8_t*)&response;
-                for (int i = 0; i < sizeof(struct icmp_hdr); i += 2) {
-                    chksum += (icmp_ptr[i] << 8) | icmp_ptr[i+1];
+                uint16_t icmp_sum = 0;
+                uint8_t* icmp_bytes = (uint8_t*)&response;
+                for(int i = 0; i < 8; i += 2) {
+                    icmp_sum += (icmp_bytes[i] << 8) | icmp_bytes[i+1];
                 }
-                chksum = (chksum >> 16) + (chksum & 0xFFFF);
-                response.chksum = htons(~chksum);
+                uint8_t* data_bytes = (uint8_t*)icmp_data;
+                for(int i = 0; i < data_len; i += 2) {
+                    uint16_t word = (data_bytes[i] << 8) | data_bytes[i+1];
+                    icmp_sum += word;
+                }
+                if(data_len % 2) {
+                    icmp_sum += data_bytes[data_len - 1] << 8;
+                }
+                icmp_sum = (icmp_sum & 0xFFFF) + (icmp_sum >> 16);
+                response.chksum = htons(~icmp_sum);
 
-
-                struct iovec iov[4];
+                struct iovec iov[5];
                 iov[0].iov_base = &pch;
                 iov[0].iov_len = sizeof(struct pcap_pkthdr);
-
                 iov[1].iov_base = &eth;
                 iov[1].iov_len = sizeof(struct eth_hdr);
-
                 iov[2].iov_base = &iph;
                 iov[2].iov_len = sizeof(struct ip_hdr);
-
                 iov[3].iov_base = &response;
-                iov[3].iov_len = sizeof(icmp_hdr);
-                
-                //fh.write(reinterpret_cast<char*>(&pch), sizeof(pcap_pkthdr));
-                //fh.write(reinterpret_cast<char*>(&iph), sizeof(ip_hdr));
-                //fh.write(reinterpret_cast<char*>(&response), sizeof(icmp_hdr));
+                iov[3].iov_len = sizeof(struct icmp_hdr);
+                iov[4].iov_base = icmp_data;
+                iov[4].iov_len = data_len;
                 
                 int fd = open(filename, O_WRONLY | O_APPEND);
-                writev(fd, iov, 4);
+                if (writev(fd, iov, 5) == -1) perror("writev");
                 close(fd);
             }
         }
